@@ -1,0 +1,471 @@
+.business-panel {
+  min-height: 530px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.business-filter {
+  min-height: 58px;
+  margin: -18px -18px 17px;
+  padding: 11px 18px;
+  border-bottom: 1px solid #edf1f7;
+}
+
+.business-table {
+  overflow-x: auto;
+  border: 1px solid #e7edf5;
+  border-radius: 6px;
+}
+
+.business-row {
+  min-width: 1080px;
+  min-height: 56px;
+  display: grid;
+  align-items: center;
+  gap: 12px;
+  padding: 0 14px;
+  border-bottom: 1px solid #edf1f7;
+  color: #526b8a;
+  font-size: 13px;
+}
+
+.business-row:last-child {
+  border-bottom: 0;
+}
+
+.product-table .business-row {
+  grid-template-columns: minmax(
+      180px,
+      1.45fr
+    ) 0.75fr 0.7fr 0.75fr 0.65fr 1.05fr 90px;
+}
+
+.order-table .business-row {
+  grid-template-columns: minmax(
+      205px,
+      1.2fr
+    ) 0.85fr 0.65fr 0.8fr 0.7fr 1fr minmax(230px, 1.25fr);
+}
+
+.business-row > span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.business-head {
+  min-height: 42px;
+  color: #496482;
+  background: #f7f9fc;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.product-name {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.product-name strong {
+  overflow: hidden;
+  color: #385574;
+  font-weight: 600;
+  text-overflow: ellipsis;
+}
+
+.product-name small {
+  color: #96a7bd;
+  font-size: 11px;
+}
+
+.business-row .money {
+  color: #176cff;
+  font-weight: 600;
+}
+
+.business-row .low-stock {
+  color: #e58328;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 9px;
+  border-radius: 12px;
+  background: #eef3fa;
+  color: #7289a5;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.status-pill.active,
+.status-pill.completed {
+  color: #0ca878;
+  background: #e7f8ef;
+}
+
+.status-pill.new {
+  color: #2475eb;
+  background: #eaf2ff;
+}
+
+.status-pill.confirmed {
+  color: #b76a13;
+  background: #fff3e2;
+}
+
+.status-pill.shipped {
+  color: #7950cf;
+  background: #f1ebff;
+}
+
+.business-actions {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.business-actions button {
+  min-width: 27px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  border-radius: 5px;
+  color: #8296b0;
+}
+
+.business-actions button:hover {
+  color: #176cff;
+  background: #edf4ff;
+}
+
+.business-actions button[title="删除"]:hover,
+.business-actions .status-action.danger:hover {
+  color: #e35059;
+  background: #fff0f1;
+}
+
+.business-actions .status-action {
+  padding: 0 7px;
+  color: #3779d6;
+  font-size: 11px;
+}
+
+.business-actions .status-action.danger {
+  color: #d6656b;
+}
+
+.order-link {
+  padding: 0;
+  color: #236ee5;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.order-link:hover {
+  text-decoration: underline;
+}
+
+.business-empty {
+  min-height: 230px;
+  display: grid;
+  place-items: center;
+  color: #92a5bd;
+  font-size: 13px;
+}
+
+.business-panel .table-footer {
+  margin-top: auto;
+}
+
+.business-modal {
+  width: min(680px, 92vw);
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+.business-modal form {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(90vh - 56px);
+}
+
+.business-modal .modal-head button {
+  display: grid;
+  place-items: center;
+}
+
+.business-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  padding: 22px;
+  overflow-y: auto;
+}
+
+.business-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: #5a7190;
+  font-size: 13px;
+}
+
+.business-form label.full {
+  grid-column: 1 / -1;
+}
+
+.business-form em {
+  color: #e55361;
+  font-style: normal;
+}
+
+.business-form input,
+.business-form select,
+.business-form textarea,
+.order-line input,
+.order-line select {
+  min-width: 0;
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid #dfe7f2;
+  border-radius: 5px;
+  outline: none;
+  color: #3e5879;
+  background: #fff;
+  font-size: 13px;
+}
+
+.business-form textarea {
+  min-height: 76px;
+  padding: 9px 10px;
+  resize: vertical;
+}
+
+.business-form input:focus,
+.business-form textarea:focus,
+.order-line input:focus,
+.order-line select:focus {
+  border-color: #5d9bf5;
+}
+
+.business-form-error {
+  margin: 0 22px 12px;
+  padding: 9px 11px;
+  border: 1px solid #ffd7dc;
+  border-radius: 5px;
+  color: #d84757;
+  background: #fff2f3;
+  font-size: 12px;
+}
+
+.business-modal .modal-actions {
+  flex: none;
+}
+
+.order-modal {
+  width: min(820px, 94vw);
+}
+
+.order-form-scroll {
+  overflow-y: auto;
+}
+
+.order-form-scroll .business-form {
+  overflow: visible;
+  padding-bottom: 10px;
+}
+
+.order-lines-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 22px;
+  padding: 14px 0;
+  border-top: 1px solid #e9eff7;
+  color: #355275;
+  font-size: 14px;
+}
+
+.order-lines-head button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #176cff;
+  font-size: 12px;
+}
+
+.order-no-products {
+  padding: 28px 22px;
+  color: #9aabc0;
+  text-align: center;
+  font-size: 12px;
+}
+
+.order-line {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 95px 100px 30px;
+  align-items: center;
+  gap: 10px;
+  margin: 0 22px 10px;
+  color: #526b8a;
+  font-size: 13px;
+}
+
+.order-line > span {
+  text-align: right;
+}
+
+.order-line > button {
+  color: #9ba9bb;
+}
+
+.order-line > button:hover {
+  color: #e35059;
+}
+
+.order-total {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+  margin: 4px 22px 18px;
+  color: #7188a4;
+  font-size: 12px;
+}
+
+.order-total strong {
+  color: #176cff;
+  font-size: 20px;
+}
+
+.order-total small {
+  color: #a3b0c1;
+  font-size: 11px;
+}
+
+.order-detail {
+  max-height: calc(90vh - 115px);
+  overflow-y: auto;
+  padding: 20px 22px;
+}
+
+.order-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.order-detail-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.order-detail-grid span {
+  color: #8b9cb2;
+  font-size: 11px;
+}
+
+.order-detail-grid strong {
+  overflow: hidden;
+  color: #405a7b;
+  font-size: 13px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+}
+
+.order-detail h4 {
+  margin: 25px 0 12px;
+  color: #355275;
+  font-size: 14px;
+}
+
+.order-detail-row {
+  min-height: 42px;
+  display: grid;
+  grid-template-columns: 2fr 0.8fr 0.7fr 0.8fr;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+  border-bottom: 1px solid #edf1f7;
+  color: #526b8a;
+  font-size: 12px;
+}
+
+.order-detail-row.detail-head {
+  color: #647d9c;
+  background: #f7f9fc;
+  font-weight: 600;
+}
+
+.order-detail-row small {
+  margin-left: 6px;
+  color: #9ba9bb;
+}
+
+.order-detail-total {
+  margin-top: 16px;
+  color: #6c829f;
+  text-align: right;
+  font-size: 12px;
+}
+
+.order-detail-total strong {
+  color: #176cff;
+  font-size: 20px;
+}
+
+:root[data-theme="dark"] .business-filter,
+:root[data-theme="dark"] .business-table,
+:root[data-theme="dark"] .business-row,
+:root[data-theme="dark"] .order-lines-head,
+:root[data-theme="dark"] .order-detail-row {
+  border-color: #303039;
+}
+
+:root[data-theme="dark"] .business-head,
+:root[data-theme="dark"] .order-detail-row.detail-head {
+  color: #c5cedb;
+  background: #222226;
+}
+
+:root[data-theme="dark"] .business-row,
+:root[data-theme="dark"] .order-detail-row,
+:root[data-theme="dark"] .order-line {
+  color: #b6c3d4;
+}
+
+:root[data-theme="dark"] .product-name strong,
+:root[data-theme="dark"] .order-lines-head,
+:root[data-theme="dark"] .order-detail h4,
+:root[data-theme="dark"] .order-detail-grid strong {
+  color: #e2e9f3;
+}
+
+:root[data-theme="dark"] .business-form label {
+  color: #b6c3d4;
+}
+
+:root[data-theme="dark"] .business-form input,
+:root[data-theme="dark"] .business-form select,
+:root[data-theme="dark"] .business-form textarea,
+:root[data-theme="dark"] .order-line input,
+:root[data-theme="dark"] .order-line select {
+  border-color: #3a3a42;
+  color: #e1e8f2;
+  background: #222226;
+}
+
+:root[data-theme="dark"] .business-form-error {
+  border-color: #61333a;
+  color: #ff9ea9;
+  background: #3a2025;
+}

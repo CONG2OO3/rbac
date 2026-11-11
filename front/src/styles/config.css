@@ -1,0 +1,396 @@
+.brand-logo {
+  width: 39px;
+  height: 39px;
+  object-fit: contain;
+  flex: none;
+  border-radius: 8px;
+}
+
+.brand-copy {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.brand-copy strong,
+.brand-copy span,
+.login-brand strong,
+.login-brand span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.login-brand > div:last-child {
+  max-width: 320px;
+}
+
+.config-page {
+  min-height: 650px;
+}
+
+.config-panel {
+  min-height: 530px;
+  overflow: hidden;
+}
+
+.config-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 13px 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.config-tabs button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 18px;
+  border-bottom: 2px solid transparent;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.config-tabs button:hover,
+.config-tabs button.active {
+  color: var(--blue);
+}
+
+.config-tabs button.active {
+  border-bottom-color: var(--blue);
+  font-weight: 600;
+}
+
+.config-body {
+  padding: 32px 38px 44px;
+}
+
+.config-fields {
+  max-width: 760px;
+}
+
+.storage-provider-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 30px;
+}
+
+.storage-provider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 78px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.storage-provider.selected {
+  border-color: var(--blue);
+  background: color-mix(in srgb, var(--blue) 8%, var(--panel, white));
+}
+
+.storage-provider input {
+  accent-color: var(--blue);
+}
+
+.storage-provider strong,
+.storage-provider small {
+  display: block;
+}
+
+.storage-provider small {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@media (max-width: 720px) {
+  .storage-provider-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.config-section-head h2 {
+  margin: 0 0 7px;
+  font-size: 18px;
+  color: var(--text);
+}
+
+.config-section-head p,
+.config-help {
+  margin: 0 0 26px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.config-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 27px;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.config-field em {
+  color: #e5484d;
+  font-style: normal;
+}
+
+.config-field > input,
+.config-field textarea {
+  width: min(100%, 600px);
+  border: 1px solid #dfe7f2;
+  border-radius: 7px;
+  outline: none;
+  padding: 10px 12px;
+  background: #fff;
+  color: var(--text);
+}
+
+.config-field > input:focus,
+.config-field textarea:focus {
+  border-color: var(--blue);
+}
+
+.config-field textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.config-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.config-logo-preview {
+  width: 84px;
+  height: 84px;
+  display: grid;
+  place-items: center;
+  flex: none;
+  border: 1px dashed #cbd9ef;
+  border-radius: 12px;
+  background: #f5f9ff;
+  color: #8ca9d4;
+}
+
+.config-logo-preview img {
+  max-width: 70px;
+  max-height: 70px;
+  object-fit: contain;
+}
+
+.config-file-input {
+  display: none;
+}
+
+.config-outline-btn {
+  padding: 9px 15px;
+  border: 1px solid #cfdcf0;
+  border-radius: 6px;
+  background: #fff;
+  color: var(--blue);
+  font-size: 13px;
+}
+
+.config-text-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 10px;
+  color: #e5484d;
+  font-size: 13px;
+}
+
+.config-logo-row .config-help {
+  margin: 10px 0 0;
+}
+
+.config-switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 21px 24px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #fbfdff;
+}
+
+.config-switch-row strong {
+  font-size: 15px;
+  color: var(--text);
+}
+
+.config-switch-row p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.config-toggle {
+  width: 44px;
+  height: 25px;
+  flex: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.config-toggle input {
+  position: absolute;
+  opacity: 0;
+}
+
+.config-toggle span {
+  display: block;
+  width: 44px;
+  height: 25px;
+  border-radius: 20px;
+  background: #cbd6e6;
+  transition: background .2s;
+}
+
+.config-toggle span::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 4px #173b6a30;
+  transition: transform .2s;
+}
+
+.config-toggle input:checked + span {
+  background: var(--blue);
+}
+
+.config-toggle input:checked + span::after {
+  transform: translateX(19px);
+}
+
+.config-toggle input:focus-visible + span {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+.config-success {
+  margin-bottom: 18px;
+  padding: 10px 13px;
+  border-radius: 6px;
+  background: #e9f8f0;
+  color: #16834a;
+  font-size: 13px;
+}
+
+.config-loading {
+  padding: 30px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.captcha-row {
+  display: flex;
+  gap: 9px;
+}
+
+.captcha-row input {
+  min-width: 0;
+  flex: 1;
+}
+
+.captcha-image {
+  width: 128px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  flex: none;
+  border: 1px solid #dce6f2;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #f0f6ff;
+  color: var(--blue);
+}
+
+.captcha-image img {
+  display: block;
+  width: 128px;
+  height: 42px;
+}
+
+.register-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 90px 20px 60px;
+}
+
+.register-card {
+  width: 440px;
+}
+
+.register-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--blue);
+}
+
+.register-heading h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #1a3358;
+}
+
+.register-subtitle {
+  margin: 8px 0 24px;
+  color: #8a9bb1;
+  font-size: 13px;
+}
+
+.register-unavailable,
+.register-done {
+  padding: 25px 8px;
+  text-align: center;
+  color: #7085a2;
+  font-size: 14px;
+}
+
+.register-done h3 {
+  margin: 0 0 9px;
+  color: #16834a;
+}
+
+.register-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 18px;
+  color: var(--blue);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+:root[data-theme='dark'] .config-switch-row,
+:root[data-theme='dark'] .config-logo-preview,
+:root[data-theme='dark'] .config-outline-btn {
+  background: #1c2e47;
+  border-color: #3a4d68;
+}
+
+:root[data-theme='dark'] .config-outline-btn {
+  color: #83b4ff;
+}
+
+:root[data-theme='dark'] .storage-provider.selected {
+  background: #172b49;
+}
